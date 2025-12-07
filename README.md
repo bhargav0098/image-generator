@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+ HEAD
+# image-generator
+=======
+>>>>>>> 7b7e3ed (Update LICENSE and README)
 # Dr. Strange Shields
 Doctor Strange Shields using Python , Opencv & Mediapipe
 
@@ -68,4 +74,7 @@ optional arguments:
   <img width="360"  src="./images/position_4.png">
   <figcaption align = "center">Figure 1: First Position].</figcaption>
 </p>
-<br>
+<br> HEAD
+=======
+ 3cad768 (Add project files)
+ 7b7e3ed (Update LICENSE and README)
