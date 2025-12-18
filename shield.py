@@ -76,7 +76,7 @@ SHIELDS = False
 scale = 1.5
 
 # --- Hand Detector ---
-detector = HandDetector(maxHands=2, detectionCon=0.7, trackingCon=0.6)
+detector = HandDetector(maxHands=2, detectionCon=0.7, minTrackCon=0.6)
 
 # --- load shield video ---
 shield = cv2.VideoCapture(current_directory + '/' + args.shield_video)
@@ -136,7 +136,7 @@ try:
         status_k1 = "🔑1✅" if KEY_1 else "🔑1❌"
         status_k2 = "🔑2✅" if KEY_2 else "🔑2❌"
         status_k3 = "🔑3✅" if KEY_3 else "🔑3❌"
-        print(f"\r{status_shields} | {status_k1} {status_k2} {status_k3}", end="", flush=True)
+        # print(f"\r{status_shields} | {status_k1} {status_k2} {status_k3}", end="", flush=True)
 
         # Read shield video frame
         ret_shield, frame_shield = shield.read()
@@ -179,20 +179,19 @@ try:
             hand_points = np.array(hand_points).flatten().reshape(1, -1)
             prediction = model.predict(hand_points)[0]
             pred_prob = np.max(model.predict_proba(hand_points))
-
-            # Activate shields sequence
-            if prediction == 'key_1' and pred_prob > 0.85:
+            print(f"\rPred: {prediction} ({pred_prob:.2f}) | {status_shields} | {status_k1} {status_k2} {status_k3}", end="", flush=True)
+            if prediction == 'key_1' and pred_prob > 0.7:
                 t1 = datetime.now()
                 KEY_1 = True
-            elif prediction == 'key_2' and pred_prob > 0.85 and KEY_1:
+            elif prediction == 'key_2' and pred_prob > 0.7 and KEY_1:
                 t2 = datetime.now()
-                if t1 + timedelta(seconds=2) > t2:
+                if t1 + timedelta(seconds=5) > t2:
                     KEY_2 = True
                 else:
                     KEY_1 = KEY_2 = False
-            elif prediction == 'key_3' and pred_prob > 0.85 and KEY_1 and KEY_2:
+            elif prediction == 'key_3' and pred_prob > 0.7 and KEY_1 and KEY_2:
                 t3 = datetime.now()
-                if t2 + timedelta(seconds=2) > t3:
+                if t2 + timedelta(seconds=5) > t3:
                     KEY_3 = True
                     SHIELDS = True
                 else:
@@ -202,6 +201,14 @@ try:
 
         # Display window if enabled
         if show_window:
+            # Draw status on frame
+            cv2.putText(frame, f"Key 1: {'ON' if KEY_1 else 'OFF'}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0) if KEY_1 else (0, 0, 255), 2)
+            cv2.putText(frame, f"Key 2: {'ON' if KEY_2 else 'OFF'}", (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0) if KEY_2 else (0, 0, 255), 2)
+            cv2.putText(frame, f"Key 3: {'ON' if KEY_3 else 'OFF'}", (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0) if KEY_3 else (0, 0, 255), 2)
+            
+            if SHIELDS:
+                 cv2.putText(frame, "SHIELDS ACTIVATED!", (10, 130), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 3)
+
             cv2.imshow('Dr. Strange shields', frame)
 
         # Virtual camera output

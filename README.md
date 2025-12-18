@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
- HEAD
-# image-generator
-=======
->>>>>>> 7b7e3ed (Update LICENSE and README)
 # Dr. Strange Shields
 Doctor Strange Shields using Python , Opencv & Mediapipe
 
