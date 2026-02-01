@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telugu Bhargav Ram | AI & Full Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Telugu Bhargav Ram, AI/ML & Full Stack Developer specializing in Generative AI, cybersecurity, and intelligent web applications." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (scroll animations) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 overflow-x-hidden transition-colors duration-500" id="body">
+  <!-- Floating gradient background -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="gradient-blob gradient-blob-1"></div>
+    <div class="gradient-blob gradient-blob-2"></div>
+    <div class="gradient-blob gradient-blob-3"></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="custom-cursor"
+    class="hidden md:block fixed w-6 h-6 rounded-full border border-cyan-400 mix-blend-difference pointer-events-none z-50">
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-slate-950/60 border-b border-white/5">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div
+          class="w-9 h-9 rounded-2xl bg-cyan-500/20 flex items-center justify-center border border-cyan-400/60 group-hover:scale-110 group-hover:border-cyan-300 transition">
+          <span class="text-lg font-bold text-cyan-300">BR</span>
+        </div>
+        <div>
+          <p class="text-sm font-semibold tracking-wide">
+            Telugu Bhargav Ram
+          </p>
+          <p class="text-[11px] text-slate-400">
+            AI/ML & Full Stack Developer
+          </p>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="theme-toggle"
+          class="ml-3 w-9 h-9 rounded-full flex items-center justify-center border border-white/10 bg-white/5 hover:bg-white/10 transition">
+          <span id="theme-icon" class="text-lg">🌙</span>
+        </button>
+      </div>
+
+      <button id="mobile-menu-btn"
+        class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5">
+        <span class="sr-only">Toggle menu</span>
+        <div class="space-y-1">
+          <span class="block w-4 h-[2px] bg-white"></span>
+          <span class="block w-4 h-[2px] bg-white"></span>
+        </div>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-white/5 bg-slate-950/95 backdrop-blur-xl">
+      <div class="max-w-6xl mx-auto px-4 py-4 space-y-2 text-sm">
+        <a href="#about" class="block nav-link-mobile">About</a>
+        <a href="#projects" class="block nav-link-mobile">Projects</a>
+        <a href="#certifications" class="block nav-link-mobile">Certifications</a>
+        <a href="#skills" class="block nav-link-mobile">Skills</a>
+        <a href="#experience" class="block nav-link-mobile">Experience</a>
+        <a href="#contact" class="block nav-link-mobile mb-2">Contact</a>
+        <button id="theme-toggle-mobile" class="w-full py-2 rounded-xl border border-white/10 bg-white/5">
+          <span id="theme-icon-mobile">🌙 Toggle Theme</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="min-h-[90vh] flex items-center">
+    <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <p class="text-cyan-300 text-xs font-semibold uppercase tracking-[0.3em] mb-4">
+          AI · Full Stack · GenAI
+        </p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          Hi, I'm <span class="text-cyan-300">Telugu Bhargav Ram</span>,
+          <span class="block mt-2">
+            <span id="typing-text" class="text-slate-100"></span>
+            <span class="typing-cursor">|</span>
+          </span>
+        </h1>
+        <p class="mt-4 text-slate-300 text-sm md:text-base max-w-xl">
+          Final-year B.Tech (CSE - AI) student from Kurnool, building
+          intelligent, scalable applications from AI-powered ad generators to
+          cybersecurity solutions and real-time emotion detection.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-3 text-xs md:text-sm">
+          <span class="pill pill-primary">AI/ML Engineer</span>
+          <span class="pill pill-outline">Full Stack (MERN)</span>
+          <span class="pill pill-outline">Generative AI & LLMs</span>
+          <span class="pill pill-outline">Cybersecurity with AI</span>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#contact" class="btn-primary"> Hire me </a>
+          <a href="#projects" class="btn-ghost"> View projects </a>
+          <div class="flex items-center gap-3 text-xs text-slate-400">
+            <a href="https://github.com/bhargav0098" target="_blank" class="icon-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/bhargav-ram-a2a33b2bb" target="_blank" class="icon-link">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4 text-[11px] text-slate-400">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Open to Internships & Full-time
+          </div>
+          <div>📍 Kurnool, Andhra Pradesh · Remote-friendly</div>
+          <div>✉️ bhargavram085@gmail.com · 📞 +91-9052021601</div>
+        </div>
+      </div>
+
+      <div class="relative flex justify-center md:justify-end" data-aos="fade-left">
+        <div
+          class="w-64 h-64 md:w-72 md:h-72 rounded-[2.5rem] glass-card relative flex items-center justify-center group">
+          <!-- Replace this circle with your actual photo -->
+          <div
+            class="w-40 h-40 md:w-44 md:h-44 rounded-3xl bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-500 p-[3px] group-hover:scale-105 transition">
+            <div class="w-full h-full rounded-3xl bg-slate-950 profile-bg">
+            </div>
+          </div>
+          <div
+            class="absolute -bottom-6 -left-4 px-4 py-2 rounded-2xl bg-slate-900/90 border border-cyan-400/40 text-[11px] flex items-center gap-2 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            AI Ads Generator · Voice Emotion Detector
+          </div>
+          <div
+            class="absolute -top-6 -right-4 px-4 py-2 rounded-2xl bg-slate-900/90 border border-purple-400/40 text-[11px]">
+            6+ Major AI/ML & Full Stack Projects
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about"
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-[11px] text-slate-400">
+      <div class="w-6 h-10 rounded-full border border-slate-500 flex items-start justify-center p-1">
+        <div class="w-[2px] h-2 rounded-full bg-slate-300 animate-bounce"></div>
+      </div>
+      <span class="mt-2">Scroll</span>
+    </a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          AI/ML & Full Stack Developer passionate about building meaningful,
+          real-world solutions.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-[1.5fr,1fr] gap-10 mt-10">
+        <div class="space-y-6 text-sm md:text-[15px]" data-aos="fade-right">
+          <p>
+            I am a final-year B.Tech student in Computer Science (Artificial
+            Intelligence) at G. Pullaiah College of Engineering and
+            Technology, Kurnool, Andhra Pradesh (2023–2027). I specialize in
+            combining modern web technologies with AI to deliver intelligent,
+            production-ready applications.
+          </p>
+          <p>
+            My experience spans Generative AI for cybersecurity, AI-driven ad
+            copy generation, conversational agents for disaster response,
+            emotion recognition from audio, and network intrusion detection. I
+            enjoy taking projects end-to-end, from ideation and data
+            processing to clean UI and scalable deployment.
+          </p>
+          <p>
+            I am actively seeking freelance, internship, and full-time
+            opportunities where I can build impactful AI-powered systems,
+            collaborate with high-performing teams, and grow as a
+            problem-solver in both backend and frontend ecosystems.
+          </p>
+
+          <!-- Education / timeline -->
+          <div class="mt-6">
+            <h3 class="text-sm font-semibold tracking-wide text-slate-300 mb-3">
+              Education & Key Milestones
+            </h3>
+            <ol class="relative border-l border-slate-700/60 space-y-4 pl-3">
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div>
+                  <p class="text-xs text-slate-400 uppercase tracking-wide">
+                    2023 – 2027
+                  </p>
+                  <p class="font-semibold text-sm">
+                    B.Tech in Computer Science (Artificial Intelligence)
+                  </p>
+                  <p class="text-xs text-slate-400">
+                    G. Pullaiah College of Engineering and Technology, Kurnool
+                  </p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div>
+                  <p class="text-xs text-slate-400 uppercase tracking-wide">
+                    Dec 2025 – Jan 2026
+                  </p>
+                  <p class="font-semibold text-sm">
+                    Intern – Cybersecurity with Generative AI
+                  </p>
+                  <p class="text-xs text-slate-400">
+                    Edunet Foundation | VOIS | Remote
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Animated skill bars -->
+        <div data-aos="fade-left">
+          <div class="glass-card p-5 space-y-4">
+            <h3 class="text-sm font-semibold tracking-wide text-slate-300 mb-1">
+              Focus Areas
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span>AI/ML & Deep Learning</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" data-skill="90"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span>Full Stack Development (MERN)</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" data-skill="85"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span>Generative AI & LLMs</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" data-skill="88"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span>Cloud & DevOps (AWS, Docker)</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" data-skill="80"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span>Problem Solving & Data Structures</span>
+                  <span>82%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" data-skill="82"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          End-to-end AI and full stack projects solving real problems with
+          clean UX and scalable architectures.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+        <!-- AI Ads Generator -->
+        <article class="project-card" data-aos="fade-up">
+          <div class="project-inner group">
+            <div class="project-badge">Generative AI</div>
+            <h3 class="project-title">AI Ads Generator</h3>
+            <p class="project-desc">
+              Developed an AI-powered web application to generate ad copy based on product details and target audience.
+            </p>
+            <ul class="project-list">
+              <li>
+                Integrated OpenAI API for context-aware ad generation.
+              </li>
+              <li>
+                Built a responsive frontend and scalable backend architecture.
+              </li>
+            </ul>
+            <div class="project-tech">
+              <span>React</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>OpenAI API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/bhargav0098/ai-ads-generator" target="_blank" class="project-link">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AI Voice Emotion Detector -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-inner group">
+            <div class="project-badge">emotion detector AI</div>
+            <h3 class="project-title">AI Voice Emotion Detector</h3>
+            <p class="project-desc">
+              Developed a real-time system to detect human emotions from audio input.
+            </p>
+            <ul class="project-list">
+              <li>
+                Processed audio signals with Librosa to extract MFCCs for model training.
+              </li>
+              <li>
+                Trained a CNN model to accurately classify emotions like happiness, sadness, and anger.
+              </li>
+            </ul>
+            <div class="project-tech">
+              <span>Python</span><span>Librosa</span><span>TensorFlow</span><span>Scikit-learn</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/bhargav0098/voice-emotion-detection" target="_blank"
+                class="project-link">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Disaster Chatbot -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-inner group">
+            <div class="project-badge">NLP</div>
+            <h3 class="project-title">Disaster Chatbot</h3>
+            <p class="project-desc">
+              Engineered a conversational AI to provide instant information during disasters.
+            </p>
+            <ul class="project-list">
+              <li>
+                Implemented NLP techniques to understand diverse user intents and queries.
+              </li>
+              <li>
+                Designed a structured knowledge base to deliver timely and accurate responses.
+              </li>
+            </ul>
+            <div class="project-tech">
+              <span>Python</span><span>NLP</span><span>Rasa Framework</span><span>Flask</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/bhargav0098/DisasterBot" target="_blank" class="project-link">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AI-Based Network Intrusion Detector -->
+        <article class="project-card" data-aos="fade-up">
+          <div class="project-inner group">
+            <div class="project-badge">Cybersecurity</div>
+            <h3 class="project-title">AI-Based Network Intrusion Detector</h3>
+            <p class="project-desc">
+              Built an AI-powered system to identify malicious network activities.
+            </p>
+            <ul class="project-list">
+              <li>
+                Analyzed network traffic datasets and performed feature engineering.
+              </li>
+              <li>
+                Trained ML models like Random Forest to classify traffic as normal or intrusive.
+              </li>
+            </ul>
+            <div class="project-tech">
+              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>TensorFlow</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/bhargav0098/AI-Based-Network-Intrusion-Detection-System" target="_blank"
+                class="project-link">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Tech Stack & Skills</h2>
+        <p class="section-subtitle">
+          From low-level data processing to polished interfaces and cloud
+          deployment.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+        <!-- Languages -->
+        <div class="glass-card p-5 flex flex-col items-center" data-aos="zoom-in">
+          <div class="circle-wrapper" data-percent="90">
+            <div class="circle-inner">
+              <span class="circle-number">90%</span>
+            </div>
+          </div>
+          <h3 class="mt-3 text-sm font-semibold">Programming Languages</h3>
+          <p class="mt-2 text-[11px] text-slate-400 text-center">
+            Java, Python, JavaScript, SQL
+          </p>
+        </div>
+
+        <!-- Backend -->
+        <div class="glass-card p-5 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="50">
+          <div class="circle-wrapper" data-percent="88">
+            <div class="circle-inner">
+              <span class="circle-number">88%</span>
+            </div>
+          </div>
+          <h3 class="mt-3 text-sm font-semibold">Backend & APIs</h3>
+          <p class="mt-2 text-[11px] text-slate-400 text-center">
+            Spring Boot, Node.js, Express.js, Flask, RESTful APIs
+          </p>
+        </div>
+
+        <!-- Frontend -->
+        <div class="glass-card p-5 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="circle-wrapper" data-percent="87">
+            <div class="circle-inner">
+              <span class="circle-number">87%</span>
+            </div>
+          </div>
+          <h3 class="mt-3 text-sm font-semibold">Frontend & UI</h3>
+          <p class="mt-2 text-[11px] text-slate-400 text-center">
+            React.js, HTML5, CSS3, Bootstrap, Tailwind CSS
+          </p>
+        </div>
+
+        <!-- Databases / Cloud -->
+        <div class="glass-card p-5 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="150">
+          <div class="circle-wrapper" data-percent="84">
+            <div class="circle-inner">
+              <span class="circle-number">84%</span>
+            </div>
+          </div>
+          <h3 class="mt-3 text-sm font-semibold">
+            Databases, Cloud & DevOps
+          </h3>
+          <p class="mt-2 text-[11px] text-slate-400 text-center">
+            MySQL, PostgreSQL, MongoDB, AWS (EC2, S3, RDS), Docker, Git,
+            GitHub
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-6 text-xs md:text-[13px]">
+        <div class="glass-card p-5" data-aos="fade-right">
+          <h3 class="text-sm font-semibold mb-3">AI & ML Skills</h3>
+          <ul class="list-disc list-inside space-y-1 text-slate-300">
+            <li>
+              Deep learning with TensorFlow, CNNs for audio and image tasks.
+            </li>
+            <li>
+              Traditional ML with Scikit-learn (classification, feature
+              engineering).
+            </li>
+            <li>
+              Generative AI and prompt engineering with OpenAI and OCI
+              Generative AI.
+            </li>
+            <li>
+              NLP workflows for chatbots, intent classification, and entity
+              extraction.
+            </li>
+            <li>
+              Data preprocessing, model evaluation, and experiment tracking.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications (Animated Cards) -->
+  <section id="certifications" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">
+          Recognized by global platforms for cloud, Generative AI, vector
+          search, and Python expertise.
+        </p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <!-- Card 1: Agentic AI -->
+        <article class="group project-card" data-aos="fade-up">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.6),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">AI</span>
+                <span class="text-[11px] text-emerald-300">Skill Up</span>
+              </div>
+              <h3 class="project-title">Agentic AI - Skill Up</h3>
+              <p class="project-desc mt-2">
+                Mastering agentic workflows and AI-driven automation for next-gen intelligent systems.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>Agentic AI</span><span>Automation</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="C:\Users\bharg\OneDrive\문서\flask\certifiacete\gfg_ai.pdf" target="_blank"
+                  class="project-link">View certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: AWS -->
+        <article class="group project-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.6),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">Cloud</span>
+                <span class="text-[11px] text-orange-300">AWS</span>
+              </div>
+              <h3 class="project-title">AWS Cloud Practitioner Essentials</h3>
+              <p class="project-desc mt-2">
+                Validated understanding of AWS core services, security, and deployment patterns for scalable
+                applications.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>AWS</span><span>Cloud</span><span>Security</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="C:\Users\bharg\OneDrive\문서\flask\certifiacete\aws.pdf" target="_blank"
+                  class="project-link">View certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Oracle GenAI -->
+        <article class="group project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.7),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">Generative AI</span>
+                <span class="text-[11px] text-red-400">Oracle OCI</span>
+              </div>
+              <h3 class="project-title">OCI Generative AI Professional</h3>
+              <p class="project-desc mt-2">
+                Demonstrates ability to design and integrate LLM-powered workflows using Oracle Cloud Services.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>OCI</span><span>LLMs</span><span>RAG</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="B:\edge douwnloasd\Genai_or.pdf" target="_blank" class="project-link">View certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Oracle AI Foundations -->
+        <article class="group project-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.7),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">AI</span>
+                <span class="text-[11px] text-red-400">Oracle OCI</span>
+              </div>
+              <h3 class="project-title">OCI AI Foundations</h3>
+              <p class="project-desc mt-2">
+                Strengthened fundamentals of ML lifecycle, model deployment, and responsible AI.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>ML Lifecycle</span><span>Foundations</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="B:\edge douwnloasd\Ai foundation_or.pdf" target="_blank" class="project-link">View
+                  certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Google GenAI -->
+        <article class="group project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.7),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">GenAI</span>
+                <span class="text-[11px] text-blue-400">Google</span>
+              </div>
+              <h3 class="project-title">Google Generative AI Academy 2.0</h3>
+              <p class="project-desc mt-2">
+                Learned to design GenAI applications, evaluate outputs, and ship reliable, production-ready AI features.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>Vertex AI</span><span>Prompting</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="C:\Users\bharg\OneDrive\문서\flask\certifiacete\gen ai 2.0 completion.png" target="_blank"
+                  class="project-link">View certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Oracle Vector Search -->
+        <article class="group project-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.7),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">AI</span>
+                <span class="text-[11px] text-red-400">Oracle</span>
+              </div>
+              <h3 class="project-title">Oracle AI Vector Search</h3>
+              <p class="project-desc mt-2">
+                Practical skills building semantic search and RAG pipelines on top of vector databases.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>Vector DB</span><span>RAG</span><span>Search</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="B:\edge douwnloasd\Aivector_or.pdf" target="_blank" class="project-link">View certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7: Python -->
+        <article class="group project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.7),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">Developer</span>
+                <span class="text-[11px] text-yellow-500">Python Institute</span>
+              </div>
+              <h3 class="project-title">Python Programming</h3>
+              <p class="project-desc mt-2">
+                Certified proficiency in Python for scripting, backend APIs, and ML workflows.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>Python</span><span>Scripting</span><span>APIs</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="C:\Users\bharg\OneDrive\문서\flask\certifiacete\PythonEssentials1Update20250930-32-5f948.pdf"
+                  target="_blank" class="project-link">View certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8: Generative AI, LLM & RAG -->
+        <article class="group project-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="project-inner relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.7),transparent_55%)]">
+            </div>
+            <div class="flex flex-col h-full relative z-10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="project-badge">GenAI</span>
+                <span class="text-[11px] text-emerald-300">Skill Up</span>
+              </div>
+              <h3 class="project-title">Generative AI, LLM & RAG - Skill Up</h3>
+              <p class="project-desc mt-2">
+                Advanced implementation of Retrieval Augmented Generation, LLMs, and Generative workflows.
+              </p>
+              <div class="mt-3 flex-1"></div>
+              <div class="project-tech mt-3">
+                <span>LLM</span><span>RAG</span><span>GenAI</span>
+              </div>
+              <div class="project-links mt-3">
+                <a href="C:\Users\bharg\OneDrive\문서\flask\certifiacete\gfg_genai.pdf" target="_blank"
+                  class="project-link">View certificate</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">
+          Applying Generative AI and security-focused ML to production-like
+          environments.
+        </p>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-[1.2fr,1fr] gap-8 items-start">
+        <!-- Timeline -->
+        <div class="space-y-5" data-aos="fade-right">
+          <div class="glass-card p-5 flex gap-4">
+            <div class="mt-1">
+              <span
+                class="px-3 py-1 rounded-full text-[11px] bg-emerald-500/10 text-emerald-300 border border-emerald-500/40">
+                Internship
+              </span>
+            </div>
+            <div class="text-xs md:text-[13px]">
+              <h3 class="text-sm font-semibold">
+                Cybersecurity with Generative AI – Intern
+              </h3>
+              <p class="text-slate-400 mt-1">
+                Edunet Foundation | VOIS · Remote · Dec 2025 – Jan 2026
+              </p>
+              <ul class="mt-2 space-y-1 list-disc list-inside text-slate-300">
+                <li>
+                  Completed project-based internship focused on Generative AI
+                  applied to modern cybersecurity challenges.
+                </li>
+                <li>
+                  Worked with tools like Wireshark and Beef Framework for
+                  network and web security analysis.
+                </li>
+                <li>
+                  Earned certification from AICTE and Edunet Foundation for
+                  successfully delivering project outcomes.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="glass-card p-5 text-xs md:text-[13px]" data-aos="fade-left">
+          <h3 class="text-sm font-semibold mb-3">
+            What I bring to your team
+          </h3>
+          <ul class="space-y-2 text-slate-300">
+            <li>
+              Ability to take an idea from problem statement to deployed
+              prototype quickly.
+            </li>
+            <li>
+              Strong collaboration, documentation, and Git-based workflow for
+              team projects.
+            </li>
+            <li>
+              Balance of software engineering best practices and experimental
+              AI research mindset.
+            </li>
+            <li>
+              Comfortable working across the stack: APIs, ML models,
+              databases, frontends, and cloud.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Let’s Build Something</h2>
+        <p class="section-subtitle">
+          Open to internships, freelance projects, and full-time roles in
+          AI/ML and full stack engineering.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-[1.2fr,1fr] gap-8 mt-10 items-start">
+        <!-- Form -->
+        <form class="glass-card p-5 space-y-4 text-xs md:text-[13px]" data-aos="fade-right" id="contact-form"
+          action="https://formsubmit.co/bhargavram085@gmail.com" method="POST">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New Portfolio Message!">
+          <input type="hidden" name="_template" value="table">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="form-label">Name</label>
+              <input type="text" name="name" class="form-input" placeholder="Your name" required />
+            </div>
+            <div>
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-input" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div>
+            <label class="form-label">What are you looking for?</label>
+            <select name="type" class="form-input">
+              <option>Internship</option>
+              <option>Freelance project</option>
+              <option>Full-time role</option>
+              <option>Collaboration / Hackathon</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Message</label>
+            <textarea name="message" rows="4" class="form-input"
+              placeholder="Share a bit about your idea, role, or problem statement." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full md:w-auto">
+            Send message
+          </button>
+          <p id="form-status" class="text-[11px] text-slate-400 mt-1"></p>
+        </form>
+
+        <!-- Quick contact -->
+        <div class="space-y-5" data-aos="fade-left">
+          <div class="glass-card p-5 text-xs md:text-[13px]">
+            <h3 class="text-sm font-semibold mb-3">Quick links</h3>
+            <div class="space-y-2">
+              <a href="mailto:bhargavram085@gmail.com" class="contact-row">
+                ✉️ <span>Email:</span>
+                <span class="text-slate-200">bhargavram085@gmail.com</span>
+              </a>
+              <a href="tel:+919052021601" class="contact-row">
+                📞 <span>Phone:</span>
+                <span class="text-slate-200">+91-9052021601</span>
+              </a>
+              <a href="https://wa.me/919052021601" target="_blank" class="contact-row">
+                💬 <span>WhatsApp:</span>
+                <span class="text-slate-200">Chat on WhatsApp</span>
+              </a>
+              <a href="https://github.com/bhargav0098" target="_blank" class="contact-row">
+                🐙 <span>GitHub:</span>
+                <span class="text-slate-200">github.com/bhargav0098</span>
+              </a>
+              <a href="https://www.linkedin.com/in/bhargav-ram-a2a33b2bb" target="_blank" class="contact-row">
+                🔗 <span>LinkedIn:</span>
+                <span class="text-slate-200">linkedin.com/in/bhargav-ram-a2a33b2bb</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-card p-5 text-[11px] text-slate-400">
+            <p>
+              I usually respond within 24 hours. Share a brief problem
+              statement or role description, and I’ll get back with ideas,
+              timelines, and how I can add value.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-5 text-[11px] text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>
+        © <span id="year"></span> Telugu Bhargav Ram. All rights reserved.
+      </p>
+      <div class="flex items-center gap-3">
+        <a href="#hero" class="hover:text-cyan-300 transition text-xs flex items-center gap-1">
+          <span>Back to top</span> ⬆️
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
