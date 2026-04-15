@@ -28,9 +28,10 @@ if (typeof gsap !== "undefined") {
 // Typing effect
 const typingText = document.getElementById("typing-text");
 const phrases = [
-  "AI/ML & Full Stack Developer.",
-  "Generative AI & Cybersecurity Enthusiast.",
-  "Building intelligent, production-ready systems.",
+  "AI/ML Engineer & Full Stack Developer.",
+  "Generative AI & Agentic AI Specialist.",
+  "Cloud-Native Architecture Expert.",
+  "Building Enterprise AI Solutions.",
 ];
 let currentPhrase = 0;
 let currentChar = 0;
