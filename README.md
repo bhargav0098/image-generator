@@ -1,6 +1,7 @@
 # Telugu Bhargav Ram — Portfolio
 
 A premium, futuristic personal portfolio built with pure HTML5, CSS3, vanilla JavaScript, Three.js, and GSAP. No frameworks, no build step — deploy straight from the repo root with GitHub Pages.
+live link : https://bhargav0098.github.io/image-generator/
 
 ## Structure
 
