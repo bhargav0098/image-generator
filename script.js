@@ -564,7 +564,7 @@ function initContactForm(){
 
     const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:bhargavram085@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:bhargavram.telugu@email.com?subject=${subject}&body=${body}`;
 
     note.textContent = 'Opening your email client…';
     note.style.color = 'var(--signal)';

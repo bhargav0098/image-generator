@@ -518,7 +518,12 @@ input,textarea{ font-family: var(--f-body); }
 .cert-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 .cert-card{
   border:1px solid var(--border-soft); border-radius: var(--radius); background: var(--surface);
-  padding: 26px; transition: transform .1s, border-color .3s;
+  padding: 26px; transition: transform .1s, border-color .3s, box-shadow .3s;
+  display: block;
+}
+.cert-card:hover{
+  border-color: rgba(var(--pulse-rgb),.4);
+  box-shadow: 0 10px 30px -15px rgba(0,0,0,.5);
 }
 .cert-top{ margin-bottom: 16px; }
 .cert-tag{
