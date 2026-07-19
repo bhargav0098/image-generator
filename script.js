@@ -6,6 +6,21 @@
 (function(){
 "use strict";
 
+/* ============================================================
+   EMAILJS CONFIG
+   1. Create a free account at https://www.emailjs.com
+   2. Add an Email Service (e.g. Gmail) connected to bhargavram085@gmail.com
+   3. Create an Email Template with variables: {{from_name}}, {{from_email}}, {{message}}
+   4. Paste your Public Key, Service ID, and Template ID below.
+   ============================================================ */
+const EMAILJS_PUBLIC_KEY  = "6c9m6fbpzkIQlGyZu";
+const EMAILJS_SERVICE_ID  = "service_w5xup4d";
+const EMAILJS_TEMPLATE_ID = "template_yg5ulqe";
+
+if(typeof emailjs !== 'undefined'){
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+}
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isTouch = window.matchMedia('(hover: none)').matches;
 
@@ -201,32 +216,6 @@ function initRoleTyper(){
   tick();
 }
 
-/* ============================================================ TERMINAL TYPED LINE */
-function initTerminalType(){
-  const el = document.getElementById('t-typed');
-  if(!el) return;
-  const text = 'echo "Let\'s build something intelligent together."';
-  let started = false;
-
-  function type(i){
-    if(i > text.length) return;
-    el.textContent = text.slice(0, i);
-    setTimeout(()=> type(i+1), 28);
-  }
-
-  const target = document.getElementById('terminal-section');
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting && !started){
-        started = true;
-        type(0);
-        obs.disconnect();
-      }
-    });
-  }, { threshold: .4 });
-  obs.observe(target);
-}
-
 /* ============================================================ STAT COUNTERS */
 function initCounters(){
   const counters = document.querySelectorAll('[data-count]');
@@ -303,10 +292,7 @@ function initTilt(){
   });
 }
 
-/* ============================================================ THREE.JS NEURAL NETWORK HERO BACKGROUND
-   Signature element: a literal node graph of his skill domains
-   (AI/ML, GenAI, Cloud, Full Stack, Data) with pulses traveling
-   along synapses — mouse-reactive parallax + pointer attraction. */
+/* ============================================================ THREE.JS NEURAL NETWORK HERO BACKGROUND */
 function initNeuralNetwork(){
   const canvas = document.getElementById('neuralCanvas');
   if(!canvas || typeof THREE === 'undefined') return;
@@ -325,10 +311,9 @@ function initNeuralNetwork(){
   const teal = new THREE.Color(0x5eead4);
   const violet = new THREE.Color(0xa78bfa);
 
-  // ---- Build node clusters: 5 "domain hubs" with satellite nodes ----
   const domainCount = 5;
   const nodesPerDomain = 7;
-  const totalNodes = domainCount * nodesPerDomain + domainCount; // + hub nodes
+  const totalNodes = domainCount * nodesPerDomain + domainCount;
   const nodePositions = [];
   const nodeIsHub = [];
   const hubPositions = [];
@@ -356,7 +341,6 @@ function initNeuralNetwork(){
     }
   }
 
-  // ---- Points (nodes) ----
   const posArray = new Float32Array(totalNodes * 3);
   const colorArray = new Float32Array(totalNodes * 3);
   const sizeArray = new Float32Array(totalNodes);
@@ -380,9 +364,7 @@ function initNeuralNetwork(){
   const points = new THREE.Points(pointsGeo, pointsMat);
   scene.add(points);
 
-  // ---- Lines (synapses): connect each satellite to its hub + hubs to each other ----
   const linePositions = [];
-  const lineOpacities = [];
   let idx = 0;
   for(let d=0; d<domainCount; d++){
     const hubIndex = idx; idx++;
@@ -392,7 +374,6 @@ function initNeuralNetwork(){
       linePositions.push(hp.x, hp.y, hp.z, sp.x, sp.y, sp.z);
     }
   }
-  // connect hubs in a ring
   for(let d=0; d<domainCount; d++){
     const a = hubPositions[d], b = hubPositions[(d+1)%domainCount];
     linePositions.push(a.x, a.y, a.z, b.x, b.y, b.z);
@@ -404,7 +385,6 @@ function initNeuralNetwork(){
   const lines = new THREE.LineSegments(lineGeo, lineMat);
   scene.add(lines);
 
-  // ---- Traveling pulses along hub-ring (signal flow) ----
   const pulseCount = 6;
   const pulseGeo = new THREE.SphereGeometry(0.07, 8, 8);
   const pulses = [];
@@ -420,7 +400,6 @@ function initNeuralNetwork(){
     });
   }
 
-  // ---- Ambient particles (depth dust) ----
   const dustCount = 220;
   const dustPos = new Float32Array(dustCount * 3);
   for(let i=0; i<dustCount; i++){
@@ -434,7 +413,6 @@ function initNeuralNetwork(){
   const dust = new THREE.Points(dustGeo, dustMat);
   scene.add(dust);
 
-  // ---- Mouse interaction ----
   let targetRotX = 0, targetRotY = 0;
   let mouseNX = 0, mouseNY = 0;
 
@@ -450,7 +428,6 @@ function initNeuralNetwork(){
   window.addEventListener('mousemove', onPointerMove, { passive:true });
   window.addEventListener('touchmove', onPointerMove, { passive:true });
 
-  // ---- Resize ----
   function onResize(){
     width = hero.clientWidth; height = hero.clientHeight;
     renderer.setSize(width, height);
@@ -459,11 +436,9 @@ function initNeuralNetwork(){
   }
   window.addEventListener('resize', onResize);
 
-  // ---- Animate ----
   const group = new THREE.Group();
   group.add(points, lines, dust);
   scene.add(group);
-  // re-parent pulses too so rotation applies uniformly
   pulses.forEach(p => group.add(p.mesh));
 
   const clock = new THREE.Clock();
@@ -498,7 +473,6 @@ function initNeuralNetwork(){
     animate();
   }
 
-  // pause rendering when hero is off-screen (perf)
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(!entry.isIntersecting && rafId){ cancelAnimationFrame(rafId); rafId = null; }
@@ -532,7 +506,7 @@ function initScrollReveals(){
   });
 
   // staggered card grids
-  [['.project-grid', '.project-card'], ['.cert-grid', '.cert-card'], ['.skills-grid', '.skill-block'], ['.about-stats', '.stat-card']].forEach(([parentSel, childSel])=>{
+  [['.project-grid', '.project-card'], ['.skills-grid', '.skill-block'], ['.about-stats', '.stat-card']].forEach(([parentSel, childSel])=>{
     document.querySelectorAll(parentSel).forEach(parent=>{
       const cards = parent.querySelectorAll(childSel);
       gsap.fromTo(cards, { opacity:0, y:50 }, {
@@ -543,33 +517,50 @@ function initScrollReveals(){
   });
 }
 
-/* ============================================================ CONTACT FORM (static — no backend) */
+/* ============================================================ CONTACT FORM (EmailJS — sends to bhargavram085@gmail.com) */
 function initContactForm(){
   const form = document.getElementById('contactForm');
-  const note = document.getElementById('formNote');
-  const btnText = document.getElementById('formSubmitText');
   if(!form) return;
 
-  form.addEventListener('submit', (e)=>{
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
+
+    const submitBtn = document.querySelector('.form-submit');
+    const submitText = document.getElementById('formSubmitText');
+    const formNote = document.getElementById('formNote');
+
     const name = document.getElementById('cf-name').value.trim();
     const email = document.getElementById('cf-email').value.trim();
     const message = document.getElementById('cf-message').value.trim();
 
     if(!name || !email || !message){
-      note.textContent = 'Please fill in every field before sending.';
-      note.style.color = '#f5b942';
+      formNote.style.color = '#f5b942';
+      formNote.textContent = 'Please fill in every field before sending.';
       return;
     }
 
-    const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:bhargavram.telugu@email.com?subject=${subject}&body=${body}`;
+    submitBtn.disabled = true;
+    submitText.textContent = 'Sending...';
+    formNote.textContent = '';
 
-    note.textContent = 'Opening your email client…';
-    note.style.color = 'var(--signal)';
-    btnText.textContent = 'Sent';
-    setTimeout(()=>{ btnText.textContent = 'Send Message'; }, 2400);
+    try{
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name: name,
+        from_email: email,
+        message: message
+      });
+
+      formNote.style.color = '#22c55e';
+      formNote.textContent = '✅ Message sent successfully!';
+      form.reset();
+    } catch(error){
+      console.error(error);
+      formNote.style.color = '#ef4444';
+      formNote.textContent = '❌ Failed to send message.';
+    } finally {
+      submitBtn.disabled = false;
+      submitText.textContent = 'Send Message';
+    }
   });
 }
 
@@ -590,7 +581,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initTilt();
   initCounters();
   initFocusBars();
-  initTerminalType();
   initContactForm();
   initNeuralNetwork();
 
