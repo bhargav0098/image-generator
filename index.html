@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Telugu Bhargav Ram — AI/ML Engineer &amp; Full Stack Developer</title>
+<meta name="description" content="Telugu Bhargav Ram — AI/ML Engineer & Full Stack Developer. Building Generative AI systems, agentic platforms, and cloud-native applications." />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%230a0e14%22/><circle cx=%2250%22 cy=%2250%22 r=%2228%22 fill=%22none%22 stroke=%22%235eead4%22 stroke-width=%226%22/><circle cx=%2250%22 cy=%2250%22 r=%226%22 fill=%22%235eead4%22/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css?v=1.1" />
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-line"><span class="prompt">&gt;</span> <span id="loaderText"></span><span class="cursor-blink">_</span></div>
+    <div class="loader-bar"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+  </div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============ NOISE OVERLAY ============ -->
+<div class="noise-overlay"></div>
+
+<!-- ============ NAV ============ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" data-cursor="link">
+      <span class="logo-mark">⟁</span><span class="logo-text">BR<span class="logo-dot">.</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about" data-cursor="link"><span class="nav-num">01</span>About</a></li>
+      <li><a href="#experience" data-cursor="link"><span class="nav-num">02</span>Experience</a></li>
+      <li><a href="#projects" data-cursor="link"><span class="nav-num">03</span>Projects</a></li>
+      <li><a href="#skills" data-cursor="link"><span class="nav-num">04</span>Skills</a></li>
+      <li><a href="#contact" data-cursor="link"><span class="nav-num">05</span>Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta" data-cursor="link"><span>Hire Me</span></a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ MOBILE MENU ============ -->
+<div id="mobileMenu" class="mobile-menu">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-foot">
+    <a href="https://github.com/bhargav0098" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/telugu-bhargav-ram-a2a33b2bb/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <canvas id="neuralCanvas"></canvas>
+  <div class="hero-vignette"></div>
+  <div class="hero-scanline"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal-up">
+      <span class="dot-live"></span>
+      <span id="statusText">SYSTEM ONLINE</span> — Open to Internships &amp; Full-time Opportunities
+    </div>
+
+    <h1 class="hero-name reveal-up">
+      <span class="hero-greet">Hi, I'm</span>
+      <span class="name-line" id="nameSplit">Telugu Bhargav Ram</span>
+    </h1>
+
+    <div class="hero-role reveal-up">
+      <span class="role-prefix">// </span><span id="roleTyper"></span><span class="role-caret">|</span>
+    </div>
+
+    <p class="hero-desc reveal-up">
+      Final-year B.Tech CSE (AI) student engineering end-to-end <strong>Generative &amp; Agentic AI</strong> systems,
+      production-grade full stack apps, and cloud-native architectures — turning research-grade ideas into
+      software that ships.
+    </p>
+
+    <div class="hero-tags reveal-up">
+      <span>Generative AI</span><span>Agentic AI</span><span>MERN Stack</span><span>Cloud Architecture</span><span>Machine Learning</span>
+    </div>
+
+    <div class="hero-actions reveal-up">
+      <a href="#projects" class="btn btn-primary magnetic" data-cursor="link">
+        <span>View Projects</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://drive.google.com/file/d/165ac8ir49iRptWB8S-0OdBmsUCILn_MR/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary magnetic" data-cursor="link">
+        <span>View Resume</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://github.com/bhargav0098" target="_blank" rel="noopener" class="btn-icon magnetic" data-cursor="link" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.43 3.44 10.03 8.2 11.65.6.12.82-.27.82-.6 0-.3-.01-1.08-.02-2.12-3.34.74-4.04-1.65-4.04-1.65-.55-1.43-1.34-1.82-1.34-1.82-1.1-.77.08-.76.08-.76 1.21.09 1.85 1.27 1.85 1.27 1.08 1.88 2.83 1.34 3.52 1.02.1-.79.42-1.34.76-1.65-2.66-.31-5.47-1.37-5.47-6.1 0-1.35.46-2.45 1.22-3.32-.12-.31-.53-1.56.12-3.25 0 0 1-.33 3.3 1.26a11.2 11.2 0 0 1 6 0c2.28-1.59 3.29-1.26 3.29-1.26.65 1.69.24 2.94.12 3.25.76.87 1.22 1.97 1.22 3.32 0 4.74-2.81 5.78-5.49 6.09.43.38.81 1.13.81 2.28 0 1.65-.02 2.98-.02 3.39 0 .33.22.72.83.6C20.56 22.32 24 17.72 24 12.3 24 5.5 18.63 0 12 0Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/telugu-bhargav-ram-a2a33b2bb/" target="_blank" rel="noopener" class="btn-icon magnetic" data-cursor="link" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-stats reveal-up">
+      <div class="stat-chip"><span class="stat-mono">06</span><span>Projects Shipped</span></div>
+      <div class="stat-chip"><span class="stat-mono">03</span><span>Internships</span></div>
+      <div class="stat-chip"><span class="stat-mono">95%</span><span>Model Accuracy</span></div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"><div class="scroll-line-fill"></div></div>
+  </div>
+
+  <div class="hero-coord">21.07° N · KURNOOL.AP.IN</div>
+</section>
+
+<!-- ============ MARQUEE STRIP ============ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>GENERATIVE AI</span><span>·</span><span>AGENTIC SYSTEMS</span><span>·</span><span>MERN STACK</span><span>·</span>
+    <span>CLOUD ARCHITECTURE</span><span>·</span><span>COMPUTER VISION</span><span>·</span><span>LLM ENGINEERING</span><span>·</span>
+    <span>GENERATIVE AI</span><span>·</span><span>AGENTIC SYSTEMS</span><span>·</span><span>MERN STACK</span><span>·</span>
+    <span>CLOUD ARCHITECTURE</span><span>·</span><span>COMPUTER VISION</span><span>·</span><span>LLM ENGINEERING</span><span>·</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-tag"><span class="eyebrow-num">01</span>Who I Am</span>
+      <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal-up">
+        <p class="about-lead">
+          AI/ML Engineer &amp; Full Stack Developer building scalable, production-ready AI applications —
+          from intelligent automation systems to cloud-native architectures.
+        </p>
+        <p>
+          I'm a final-year <strong>B.Tech Computer Science (Artificial Intelligence)</strong> student at
+          G. Pullaiah College of Engineering and Technology, Kurnool, Andhra Pradesh (2023–2027). My work sits at
+          the intersection of modern web engineering and applied AI — designing systems where machine learning
+          isn't a bolt-on feature, but the core of how the product behaves.
+        </p>
+        <p>
+          I've built AI-driven healthcare triage systems, autonomous multi-agent platforms, and developer
+          productivity tools — each shipped end-to-end: model, backend, UI, and cloud deployment. Currently
+          looking for internship and full-time roles where I can build high-impact AI systems alongside teams
+          who care about shipping real things.
+        </p>
+
+        <div class="about-edu">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <div class="edu-title">B.Tech in Computer Science Engineering (Artificial Intelligence)</div>
+            <div class="edu-sub">G. Pullaiah College of Engineering &amp; Technology, Kurnool &nbsp;·&nbsp; 2023 – 2027</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats reveal-up">
+        <div class="stat-card" data-tilt>
+          <div class="stat-card-num" data-count="6">0</div>
+          <div class="stat-card-label">Projects Built</div>
+        </div>
+        <div class="stat-card" data-tilt>
+          <div class="stat-card-num" data-count="3">0</div>
+          <div class="stat-card-label">Internships</div>
+        </div>
+        <div class="stat-card" data-tilt>
+          <div class="stat-card-num" data-count="6">0</div>
+          <div class="stat-card-label">Certifications</div>
+        </div>
+        <div class="stat-card" data-tilt>
+          <div class="stat-card-num" data-count="95" data-suffix="%">0</div>
+          <div class="stat-card-label">Model Accuracy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="focus-bars reveal-up">
+      <div class="focus-row">
+        <span class="focus-label">AI/ML &amp; Deep Learning</span>
+        <div class="focus-track"><div class="focus-fill" data-width="90"></div></div>
+        <span class="focus-pct">90%</span>
+      </div>
+      <div class="focus-row">
+        <span class="focus-label">Full Stack Development (MERN)</span>
+        <div class="focus-track"><div class="focus-fill" data-width="85"></div></div>
+        <span class="focus-pct">85%</span>
+      </div>
+      <div class="focus-row">
+        <span class="focus-label">Generative AI &amp; LLMs</span>
+        <div class="focus-track"><div class="focus-fill" data-width="88"></div></div>
+        <span class="focus-pct">88%</span>
+      </div>
+      <div class="focus-row">
+        <span class="focus-label">Cloud &amp; DevOps (AWS, Azure)</span>
+        <div class="focus-track"><div class="focus-fill" data-width="80"></div></div>
+        <span class="focus-pct">80%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section">
+  <div class="section-inner">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-tag"><span class="eyebrow-num">02</span>Career Journey</span>
+      <h2 class="section-title">Work <span class="text-accent">Experience</span></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"><div class="timeline-line-fill"></div></div>
+
+      <div class="timeline-item reveal-up">
+        <div class="timeline-node"></div>
+        <div class="timeline-card" data-tilt>
+          <div class="timeline-card-top">
+            <span class="timeline-badge">Internship</span>
+            <span class="timeline-date">Jan 2026 – Feb 2026</span>
+          </div>
+          <h3>Azure Emerging Technologies Intern</h3>
+          <div class="timeline-org">Microsoft Elevate <span class="org-sep">|</span> AICTE</div>
+          <ul>
+            <li>Designed cloud-native Azure architecture with Docker and Kubernetes, boosting scaling efficiency and reducing downtime by 30%.</li>
+            <li>Deployed automated CI/CD pipelines within Agile sprints, cutting software release cycle time by 75% (from 4 days to 1 day).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up">
+        <div class="timeline-node"></div>
+        <div class="timeline-card" data-tilt>
+          <div class="timeline-card-top">
+            <span class="timeline-badge">Internship</span>
+            <span class="timeline-date">Oct 2025 – Dec 2025</span>
+          </div>
+          <h3>AI &amp; Machine Learning Intern</h3>
+          <div class="timeline-org">IBM SkillsBuild <span class="org-sep">|</span> AICTE</div>
+          <ul>
+            <li>Built CNN audio emotion detection pipeline using PyTorch and MFCC feature extraction, achieving 94.2% accuracy on noisy datasets.</li>
+            <li>Optimized raw audio preprocessing with Librosa, reducing training input latency by 35% and enhancing feature consistency.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section">
+  <div class="section-inner">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-tag"><span class="eyebrow-num">03</span>What I Build</span>
+      <h2 class="section-title">Featured <span class="text-accent">Projects</span></h2>
+      <p class="section-sub">End-to-end AI and full-stack systems — solving real problems with clean UX and architecture built to scale.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card reveal-up" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-top">
+          <span class="project-tag">AI · Healthcare</span>
+          <span class="project-index">01</span>
+        </div>
+        <h3 class="project-name">MediQueueAI</h3>
+        <p class="project-role">AI-Powered Hospital Management System</p>
+        <p class="project-desc">AI-driven triage, real-time queue management, and clinical safety automation for hospital front desks.</p>
+        <ul class="project-points">
+          <li>Increased patient classification speed by 35% with an AI triage model.</li>
+          <li>Real-time queue management over WebSockets — cut average wait time by 20%.</li>
+          <li>AI-driven drug recommendation &amp; allergy alerting for clinical safety.</li>
+        </ul>
+        <div class="project-stack">
+          <span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>WebSockets</span><span>AI</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/bhargav0098/mediqueue-AI" target="_blank" rel="noopener" class="proj-btn" data-cursor="link">Code</a>
+          <a href="https://final-vj5v.vercel.app/login" target="_blank" rel="noopener" class="proj-btn proj-btn-primary" data-cursor="link">Live Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-top">
+          <span class="project-tag">AI · Careers</span>
+          <span class="project-index">02</span>
+        </div>
+        <h3 class="project-name">Career IQ</h3>
+        <p class="project-role">AI-Powered Career &amp; Resume Intelligence Platform</p>
+        <p class="project-desc">Full stack application for automated resume parsing, career guidance, and AI-driven mock interviews.</p>
+        <ul class="project-points">
+          <li>Automated analysis of resume files with personalized feedback and career pathing.</li>
+          <li>High-accuracy matching algorithm between candidate profiles and job descriptions.</li>
+          <li>Integrated AI chatbot for interactive career counseling and interview practice.</li>
+        </ul>
+        <div class="project-stack">
+          <span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>Gemini API</span><span>Tailwind CSS</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/bhargav0098/hm" target="_blank" rel="noopener" class="proj-btn" data-cursor="link">Code</a>
+          <a href="https://hm-azure-ten.vercel.app/" target="_blank" rel="noopener" class="proj-btn proj-btn-primary" data-cursor="link">Live Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-top">
+          <span class="project-tag">Dev Productivity</span>
+          <span class="project-index">03</span>
+        </div>
+        <h3 class="project-name">DevForgeAI</h3>
+        <p class="project-role">Developer Productivity Platform</p>
+        <p class="project-desc">AI-powered architecture generation, code review, and documentation for faster shipping.</p>
+        <ul class="project-points">
+          <li>Visual system-design tool that generates code from diagrams — cut lead time by 30%.</li>
+          <li>AI-powered code reviewer &amp; documentation generator for quality control.</li>
+          <li>High-speed search via Tavily and fast inference using the Groq API.</li>
+        </ul>
+        <div class="project-stack">
+          <span>FastAPI</span><span>Next.js</span><span>Groq API</span><span>Tavily</span><span>MongoDB</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/bhargav0098/Devforge-Ai" target="_blank" rel="noopener" class="proj-btn" data-cursor="link">Code</a>
+          <a href="https://devforge-ai-gamma.vercel.app/" target="_blank" rel="noopener" class="proj-btn proj-btn-primary" data-cursor="link">Live Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-top">
+          <span class="project-tag">EdTech · Generative AI</span>
+          <span class="project-index">04</span>
+        </div>
+        <h3 class="project-name">EduBridge AI</h3>
+        <p class="project-role">Inclusive, Bandwidth-Resilient Multilingual AI Classroom</p>
+        <p class="project-desc">AI-powered educational ecosystem bridging academic divides in underserved Indian classrooms with offline-resilient architecture.</p>
+        <ul class="project-points">
+          <li>Real-time AI tutor with FAISS RAG indexing NCERT textbooks for zero hallucination.</li>
+          <li>Handwritten math solver using Donut OCR and Gemini 1.5 Flash for step-by-step derivations.</li>
+          <li>Whisper voice input in Hindi/English with regional Santali dialect preprocessing.</li>
+        </ul>
+        <div class="project-stack">
+          <span>React</span><span>Vite</span><span>Gemini 1.5</span><span>FAISS RAG</span><span>Whisper</span><span>Donut OCR</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/bhargav0098/EduBridge-Ai" target="_blank" rel="noopener" class="proj-btn" data-cursor="link">Code</a>
+          <a href="https://edu-bridge-ai-jade.vercel.app/" target="_blank" rel="noopener" class="proj-btn proj-btn-primary" data-cursor="link">Live Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-top">
+          <span class="project-tag">Agentic AI · Swarm</span>
+          <span class="project-index">05</span>
+        </div>
+        <h3 class="project-name">INTENTO</h3>
+        <p class="project-role">Autonomous Goal Planning &amp; Parallel Execution Platform</p>
+        <p class="project-desc">Solasta Hackathon 2026 AI Agent platform decomposing natural language goals into parallel dependency graphs.</p>
+        <ul class="project-points">
+          <li>Dependency-aware step graph with parallel execution using Kahn's topological sort.</li>
+          <li>5 specialized AI agents (Planner, Executor, Verifier, Critic, Memory) with auto-replan.</li>
+          <li>Live real-time execution streaming over WebSockets with confidence scoring decay.</li>
+        </ul>
+        <div class="project-stack">
+          <span>Next.js 14</span><span>FastAPI</span><span>Python</span><span>WebSocket</span><span>Gemini 1.5</span><span>Tavily</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/bhargav0098/INTENTO" target="_blank" rel="noopener" class="proj-btn" data-cursor="link">Code</a>
+          <a href="https://intento-lovat.vercel.app/" target="_blank" rel="noopener" class="proj-btn proj-btn-primary" data-cursor="link">Live Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-tilt>
+        <div class="project-glow"></div>
+        <div class="project-top">
+          <span class="project-tag">Computer Vision · Gaming</span>
+          <span class="project-index">06</span>
+        </div>
+        <h3 class="project-name">Webcam Fruit Ninja</h3>
+        <p class="project-role">Vision-Based Hand-Tracking HTML5 Canvas Game</p>
+        <p class="project-desc">High-performance browser Fruit Ninja featuring zero-latency webcam index finger tracking powered by MediaPipe WASM.</p>
+        <ul class="project-points">
+          <li>100% on-device hand tracking running locally in browser via MediaPipe Tasks Vision.</li>
+          <li>60 FPS HTML5 Canvas engine with glowing finger blade trails, slice physics &amp; juice particles.</li>
+          <li>3 difficulty tiers, combo multipliers, golden bonus fruits, and ice freeze mechanics.</li>
+        </ul>
+        <div class="project-stack">
+          <span>React 18</span><span>MediaPipe</span><span>HTML5 Canvas</span><span>WebAssembly</span><span>Vite</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/bhargav0098/web" target="_blank" rel="noopener" class="proj-btn" data-cursor="link">Code</a>
+          <a href="https://web-ecru-five-26.vercel.app/" target="_blank" rel="noopener" class="proj-btn proj-btn-primary" data-cursor="link">Live Demo</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section">
+  <div class="section-inner">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-tag"><span class="eyebrow-num">04</span>Technical Arsenal</span>
+      <h2 class="section-title">Tech Stack &amp; <span class="text-accent">Skills</span></h2>
+      <p class="section-sub">From low-level data pipelines to polished interfaces and cloud deployment.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-block reveal-up" data-tilt>
+        <div class="skill-block-head"><span class="skill-icon">{ }</span><h3>Programming</h3></div>
+        <div class="skill-pills">
+          <span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span>
+        </div>
+      </div>
+
+      <div class="skill-block skill-block-wide reveal-up" data-tilt>
+        <div class="skill-block-head"><span class="skill-icon">◎</span><h3>AI / ML</h3></div>
+        <div class="skill-pills">
+          <span>PyTorch</span><span>TensorFlow</span><span>CNN</span><span>NLP</span><span>Computer Vision</span><span>LLMs</span><span>AI Agents</span>
+        </div>
+      </div>
+
+      <div class="skill-block reveal-up" data-tilt>
+        <div class="skill-block-head"><span class="skill-icon">▣</span><h3>Frontend</h3></div>
+        <div class="skill-pills">
+          <span>React</span><span>Next.js</span><span>Tailwind CSS</span><span>ReactFlow</span>
+        </div>
+      </div>
+
+      <div class="skill-block reveal-up" data-tilt>
+        <div class="skill-block-head"><span class="skill-icon">▤</span><h3>Backend</h3></div>
+        <div class="skill-pills">
+          <span>Node.js</span><span>Express</span><span>FastAPI</span><span>Spring Boot</span>
+        </div>
+      </div>
+
+      <div class="skill-block reveal-up" data-tilt>
+        <div class="skill-block-head"><span class="skill-icon">☁</span><h3>Cloud</h3></div>
+        <div class="skill-pills">
+          <span>AWS</span><span>Azure</span><span>Docker</span><span>CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left reveal-up">
+        <span class="eyebrow-tag"><span class="eyebrow-num">05</span>Get In Touch</span>
+        <h2 class="section-title">Let's Build <span class="text-accent">Something</span></h2>
+        <p class="section-sub">Open to internships, freelance projects, and full-time roles in AI/ML &amp; full stack engineering. Drop a message — I usually respond within 24 hours.</p>
+
+        <div class="contact-links">
+          <a href="mailto:bhargavram085@gmail.com" class="contact-link" data-cursor="link">
+            <span class="contact-link-icon">✉</span>
+            <span><span class="contact-link-label">Email</span><span class="contact-link-val">bhargavram085@gmail.com</span></span>
+          </a>
+          <a href="https://github.com/bhargav0098" target="_blank" rel="noopener" class="contact-link" data-cursor="link">
+            <span class="contact-link-icon">⌥</span>
+            <span><span class="contact-link-label">GitHub</span><span class="contact-link-val">github.com/bhargav0098</span></span>
+          </a>
+          <a href="https://www.linkedin.com/in/telugu-bhargav-ram-a2a33b2bb/" target="_blank" rel="noopener" class="contact-link" data-cursor="link">
+            <span class="contact-link-icon">in</span>
+            <span><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">linkedin.com/in/telugu-bhargav-ram-a2a33b2bb</span></span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="from_name" placeholder="Your name" required />
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="from_email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Share a brief problem statement, role, or idea…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit magnetic">
+          <span id="formSubmitText">Send Message</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">⟁</span> Telugu Bhargav Ram<span class="logo-dot">.</span>
+    </div>
+    <p class="footer-credit">© <span id="year"></span> Telugu Bhargav Ram. Built with HTML, CSS, JS &amp; Three.js.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/bhargav0098" target="_blank" rel="noopener" data-cursor="link">GitHub</a>
+      <a href="https://www.linkedin.com/in/telugu-bhargav-ram-a2a33b2bb/" target="_blank" rel="noopener" data-cursor="link">LinkedIn</a>
+      <a href="mailto:bhargavram085@gmail.com" data-cursor="link">Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING ASSISTANT ============ -->
+<div id="aiAssistant" class="ai-assistant" data-cursor="link" role="button" aria-label="AI Assistant">
+  <div class="ai-assistant-core"></div>
+</div>
+<div id="aiAssistantPanel" class="ai-assistant-panel">
+  <div class="ai-panel-head">
+    <span>AI.SYS</span>
+    <button id="aiPanelClose" aria-label="Close">✕</button>
+  </div>
+  <div class="ai-panel-body">
+    <p>👋 Hey — I'm a lightweight assistant for this site.</p>
+    <p>Try the quick actions below:</p>
+    <div class="ai-panel-actions">
+      <button data-jump="#projects">Show me his projects</button>
+      <button data-jump="#skills">What's his tech stack?</button>
+      <button data-jump="#contact">How do I contact him?</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BACK TO TOP ============ -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M8 3L4 7M8 3L12 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js?v=1.1"></script>
+
+</body>
+</html>

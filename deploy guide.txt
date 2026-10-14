@@ -1,0 +1,33 @@
+# Deploy Portfolio to GitHub & GitHub Pages
+
+Target Repository: https://github.com/bhargav0098/image-generator
+Live Site URL will be: https://bhargav0098.github.io/image-generator/
+
+---
+
+### Step 1: Initialize Git and Commit
+Open PowerShell / Terminal in this folder (`b:\claude\New folder\portfolio`):
+
+```powershell
+git init
+git add .
+git commit -m "Deploy portfolio website"
+git branch -M main
+```
+
+### Step 2: Connect Remote and Push
+```powershell
+git remote add origin https://github.com/bhargav0098/image-generator.git
+git push -u origin main --force
+```
+*(Note: `--force` overwrites any existing files in that remote repository with your portfolio).*
+
+### Step 3: Enable GitHub Pages
+1. Go to: **https://github.com/bhargav0098/image-generator/settings/pages**
+2. Under **Build and deployment**:
+   - **Source**: Select `Deploy from a branch`
+   - **Branch**: Select `main` and folder `/ (root)`
+3. Click **Save**.
+
+Your portfolio will be live in 1-2 minutes at:
+👉 **https://bhargav0098.github.io/image-generator/**

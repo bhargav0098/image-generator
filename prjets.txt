@@ -1,0 +1,62 @@
+Resume Link:
+https://drive.google.com/file/d/165ac8ir49iRptWB8S-0OdBmsUCILn_MR/view?usp=drive_link
+
+============================================================
+1. MediQueue AI
+Info: AI-driven hospital triage and emergency queue management platform with real-time patient telemetry and clinical safety alerts.
+Tech Stack: Next.js, Node.js, MongoDB, WebSockets, Python ML, Redis
+Live Demo: https://final-vj5v.vercel.app/login
+GitHub: https://github.com/bhargav0098/mediqueue-AI
+img https://drive.google.com/file/d/1qDVkg2M5Tp3lF_g7euqV4w5bJg1AQ2sS/view?usp=sharing
+============================================================
+2. CareerIQ AI
+Info: Full-stack MERN + AI career intelligence platform with 6 collaborative AI agents for skill-gap analysis, ATS resume building, and mock interviews.
+Tech Stack: React, Vite, Tailwind CSS, Framer Motion, Zustand, Node.js, Express, MongoDB Atlas, Google Gemini 2.0 Flash
+Live Demo: https://hm-azure-ten.vercel.app/
+GitHub: https://github.com/bhargav0098/hm
+img:https://drive.google.com/file/d/1SuqoYjQRWWDsUjCA4L0YDIS0Y6o0yxoC/view?usp=sharing
+
+============================================================
+3. EduBridge AI
+Info: Bandwidth-resilient multilingual AI educational ecosystem bridging academic divides with NCERT FAISS RAG, Donut OCR math solver, and Whisper voice transcription.
+Tech Stack: React, Vite, Tailwind CSS, Framer Motion, Gemini 1.5 Flash, FAISS RAG, Whisper, Donut OCR
+Live Demo: https://edu-bridge-ai-jade.vercel.app/
+GitHub: https://github.com/bhargav0098/EduBridge-Ai
+img:https://drive.google.com/file/d/13T37we8b3YR6kHdwCzmtWoV3Lkx4fKAx/view?usp=sharing
+
+============================================================
+4. INTENTO
+Info: Autonomous AI Agent platform decomposing natural language goals into a Kahn's topological sort dependency graph executed across 5 parallel AI agents.
+Tech Stack: Next.js 14, TypeScript, Tailwind CSS, Python FastAPI, Uvicorn, WebSocket, Gemini 1.5 Flash, Tavily Search, MongoDB Atlas
+Live Demo: https://intento-lovat.vercel.app/
+GitHub: https://github.com/bhargav0098/INTENTO
+img https://drive.google.com/file/d/10cFQDH5Sslq9qjSvKigXuDJkFChSs_Xi/view?usp=sharing
+============================================================
+5. DevForge AI
+Info: AI developer suite featuring visual ReactFlow node-to-code architecture planning, automated code reviews, and repo documentation generation.
+Tech Stack: Next.js 14, React 18, Tailwind CSS, Google Gemini 2.5 Flash, ReactFlow, Sandpack, Zustand
+Live Demo: https://devforge-ai-gamma.vercel.app/
+GitHub: https://github.com/bhargav0098/Devforge-Ai
+img:https://drive.google.com/file/d/1B-VSUf_ErxMUZxhW6iao8II8xe4ynRC6/view?usp=sharing
+
+============================================================
+6. Webcam Fruit Ninja
+Info: Real-time browser Fruit Ninja game with zero-latency webcam index finger hand tracking running 100% client-side via MediaPipe WASM at 60 FPS.
+Tech Stack: React 18, Vite, HTML5 Canvas 2D, MediaPipe Tasks Vision, WebAssembly, Browser getUserMedia API
+Live Demo: https://web-ecru-five-26.vercel.app/
+GitHub: https://github.com/bhargav0098/web
+img https://drive.google.com/file/d/1h3YrK_tXFTHLiZAPOmkRfLvBVcRqRqEg/view?usp=sharing
+
+certifcfates 
+5 days ai agenst https://drive.google.com/file/d/1B84Vc_nj3C7NfUdXe1WWl8aCyC01ORHs/view?usp=sharing
+ai studio https://drive.google.com/file/d/11dnHjof0TtBy7an4epP1LA7bT4b0E8yL/view?usp=sharing
+ai foundation https://drive.google.com/file/d/1Xx5YwfcGiRw1VPGwea5OEn90IUkX86ja/view?usp=sharing
+ai vector https://drive.google.com/file/d/1CCdwMvZH-fzttGhEhy7srGjoMUkj_esz/view?usp=sharing
+aws cloud partintor https://drive.google.com/file/d/10xSq05wCk6DbC6vN4jhfRuj5odlWN8KU/view?usp=sharing
+aws machine learing https://drive.google.com/file/d/1ITet9ia1MwxVP0fvqBcATx588vgbNarL/view?usp=sharing
+fabric analysis https://drive.google.com/file/d/1TJCxS9LPqlU2n1cXxGRmMDjXZKJVYlLI/view?usp=sharing
+gen ai 2.0 https://drive.google.com/file/d/1kqxlAbPAeR3T8c0OAnLpd-Z3ky1kmSKV/view?usp=sharing
+oracle gen ai https://drive.google.com/file/d/1at9ngybpQkaH9aWAS1mwDZtkV2TUr5IR/view?usp=sharing
+python gfg https://drive.google.com/file/d/17bUKgFwqyicOwfQrtPi3oWP5-YB5FmAJ/view?usp=sharing
+sap https://drive.google.com/file/d/1Yr2Erdk9KqrimGm0DIJ37QA8Qt6jUGIU/view?usp=sharing
+sql ai https://drive.google.com/file/d/19mnI_VHj7L-VWseHwYLbcm1R6kGHDY6x/view?usp=sharing

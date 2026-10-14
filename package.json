@@ -1,0 +1,10 @@
+{
+  "name": "developer-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix portfolio run dev",
+    "build": "npm --prefix portfolio run build",
+    "preview": "npm --prefix portfolio run preview"
+  }
+}
